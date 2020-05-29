@@ -21,6 +21,10 @@ else()
   message(FATAL_ERROR "変数CMAKE_BUILD_TYPEが定義されていません")
 endif()
 
+if (EMSCRIPTEN)
+  set(CMAKE_EXECUTABLE_SUFFIX ".html")
+endif()
+
 # ビルドコマンドを出力 (要 CMake 2.8.5)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
