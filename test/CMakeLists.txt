@@ -6,6 +6,7 @@ include_directories(
 add_executable(
   Tester_${PROJECT_NAME}
   Tester.cpp
+  double.cpp
   sum.cpp
   uint64_t.cpp
 )
