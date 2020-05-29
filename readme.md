@@ -12,4 +12,4 @@ $ make
 ## 動かしてみる
 
 1. Live Serverを起動
-1. ブラウザから http://localhost:5500/sample.html にアクセス
+1. ブラウザから http://localhost:5500/src/sample.html にアクセス
