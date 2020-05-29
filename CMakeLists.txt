@@ -28,5 +28,11 @@ endif()
 # ビルドコマンドを出力 (要 CMake 2.8.5)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# config.h.inからconfig.hを生成する
+configure_file(
+  "${PROJECT_SOURCE_DIR}/include/config.h.in"
+  "${PROJECT_BINARY_DIR}/include/config.h"
+)
+
 add_subdirectory(src)
 add_subdirectory(test)
