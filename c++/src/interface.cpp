@@ -14,3 +14,15 @@ const char* sum(int a, int b, int c, const char* text)
 
     return oss.str().c_str();
 }
+
+const char* sumFromText(const char* text)
+{
+    std::istringstream iss(text);
+
+    int a, b, c;
+    std::string s;
+
+    iss >> a >> b >> c >> s;
+
+    return sum(a, b, c, s.c_str());
+}

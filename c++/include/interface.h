@@ -12,6 +12,7 @@ extern "C"
 
     /// 指定された3つの整数値を加算し、結果値の後ろに指定テキストを追加した文字列を返す
     const char* EMSCRIPTEN_KEEPALIVE sum(int a, int b, int c, const char* text);
+    const char* EMSCRIPTEN_KEEPALIVE sumFromText(const char* text);
 };
 
 #endif  // INTERFACE_H
