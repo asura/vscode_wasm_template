@@ -14,3 +14,9 @@ $ make
 
 1. Live Serverを起動
 1. ブラウザから http://localhost:5500/c%2B%2B/ebuild/src/sample.html にアクセス
+
+## 参考サイト
+
+* [trzeci/emscripten - Docker Hub](https://hub.docker.com/r/trzeci/emscripten)
+* [1年間本番環境で WebAssembly ( by Emscripten )を使ってきた中で生じた問題とその解決策 - Qiita](https://qiita.com/goccy/items/1b2ff919b4b5e5a06110)
+* [EmscriptenとCMakeでのビルド方法](https://gist.github.com/faithandbrave/9b3d439d135e63abdbe7)
