@@ -12,6 +12,7 @@ if (EMSCRIPTEN)
   add_executable(
     interface
     interface.cpp
+    ShapefileReader.cpp
   )
 
   set_target_properties(

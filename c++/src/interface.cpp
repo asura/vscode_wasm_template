@@ -1,5 +1,7 @@
 #include "interface.h"
 
+#include "ShapefileReader.h"
+
 #include <sstream>
 
 int add(int a, int b)
@@ -25,4 +27,10 @@ const char* sumFromText(const char* text)
     iss >> a >> b >> c >> s;
 
     return sum(a, b, c, s.c_str());
+}
+
+size_t getShapefileNRecord(const uint8_t* buffer, size_t buffer_size)
+{
+    ShapefileReader reader(buffer, buffer_size);
+    return reader.n_record();
 }

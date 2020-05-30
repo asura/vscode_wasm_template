@@ -2,29 +2,12 @@
 #define PATH_PLANNING_H
 
 #include "config.h"
+#include "optional.h"
 
 #include <deque>
 #include <functional>  // reference_wrapper
 #include <queue>       // priority_queue
 #include <unordered_map>
-
-#ifdef STD_OPTIONAL_EXISTS
-
-#include <optional>
-using std::nullopt;
-using std::optional;
-
-#else
-
-#ifdef STD_EXPERIMENTAL_OPTIONAL_EXISTS
-
-#include <experimental/optional>
-using std::experimental::nullopt;
-using std::experimental::optional;
-
-#endif
-
-#endif
 
 /**
  * 重複検出のため生成済み・展開済みノードを保持する
