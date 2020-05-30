@@ -13,4 +13,11 @@ if (EMSCRIPTEN)
     interface
     interface.cpp
   )
+
+  set_target_properties(
+    interface
+    PROPERTIES
+    LINK_FLAGS
+    "-s EXTRA_EXPORTED_RUNTIME_METHODS='[\"ccall\"]'"
+  )
 endif()
