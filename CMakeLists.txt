@@ -28,6 +28,11 @@ endif()
 # ビルドコマンドを出力 (要 CMake 2.8.5)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+include(CheckIncludeFileCXX)
+
+CHECK_INCLUDE_FILE_CXX(optional STD_OPTIONAL_EXISTS)
+CHECK_INCLUDE_FILE_CXX(experimental/optional STD_EXPERIMENTAL_OPTIONAL_EXISTS)
+
 # config.h.inからconfig.hを生成する
 configure_file(
   "${PROJECT_SOURCE_DIR}/include/config.h.in"
