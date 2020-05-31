@@ -8,6 +8,7 @@ add_executable(
   Tester_${PROJECT_NAME}
   Tester.cpp
   double.cpp
+  ifstream.cpp
   path_planning.cpp
   sum.cpp
   uint64_t.cpp
