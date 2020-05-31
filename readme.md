@@ -26,3 +26,6 @@ $ make
 * [XMLHttpRequest する関数を Promise を返すように修正するチュートリアルをやってみた | deadwood](https://www.d-wood.com/blog/2017/02/13_8809.html)
 * [バイナリデータの送信と受信 - XMLHttpRequest | MDN](https://developer.mozilla.org/ja/docs/XMLHttpRequest/Sending_and_Receiving_Binary_Data)
 * [サーバからのデータ取得 - ウェブ開発を学ぶ | MDN](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+* [File System API — Emscripten 1.39.14 documentation](https://emscripten.org/docs/api_reference/Filesystem-API.html)
+* [ホイール欲しい ハンドル欲しい » Emscripten C++/OpenGL ES 2.0 (9) C関数呼び出しと FileSystem](https://wlog.flatlib.jp/item/1709)
+* [Emscripten(C/C++) と JavaScript 間の関数呼び出し方法 まとめ | Sumire Lab Docs](https://www.sumiretool.net/docs/tech/emscriptencc-%E3%81%A8-javascript-%E9%96%93%E3%81%AE%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E6%96%B9%E6%B3%95-%E3%81%BE%E3%81%A8%E3%82%81/)
