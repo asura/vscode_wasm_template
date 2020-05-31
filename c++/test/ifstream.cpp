@@ -22,7 +22,6 @@ TEST_CASE("ファイルの読み込み")
     // ファイルシステム作成
     EM_ASM_({
         const path = UTF8ToString($0, $1 + 1);
-        console.log(path);
         FS.mkdir(path);
         FS.mount(MEMFS, [], path);
     },
