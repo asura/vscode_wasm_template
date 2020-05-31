@@ -21,7 +21,7 @@ TEST_CASE("ファイルの読み込み")
 #ifdef EMSCRIPTEN
     // ファイルシステム作成
     EM_ASM_({
-        const path = UTF8ToString($0, $1 + 1);
+        const path = UTF8ToString($0, $1);
         FS.mkdir(path);
         FS.mount(MEMFS, [], path);
     },
@@ -35,7 +35,6 @@ TEST_CASE("ファイルの読み込み")
 
     // ファイルを書き出し
     EM_ASM(
-        // 書き込み (false は省略できる)
         FS.syncfs(false, function(err){}););
 #endif
 
