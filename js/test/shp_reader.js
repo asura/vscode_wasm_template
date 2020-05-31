@@ -1,36 +1,29 @@
 function readShp(filePath) {
 	return new Promise((resolve, reject) => {
-		var xhr = new XMLHttpRequest();
+		fetch(filePath).then(function (response) {
+			return response.arrayBuffer();
+		}).then(function (arrayBuffer) {
+			if (arrayBuffer) {
+				// ファイル内容をWASM側のメモリへ転送
 
-		xhr.open("GET", filePath, true);
-		xhr.responseType = "arraybuffer";
+				var byteArray = new Uint8Array(arrayBuffer);
 
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4) {
-				// DONE
-				var arrayBuffer = xhr.response; // 外部ファイルの内容(arraybuffer)
+				var ptr = Module._malloc(arrayBuffer.byteLength);
+				var result = new Uint8Array(Module.HEAPU8.buffer, ptr, arrayBuffer.byteLength);
 
-				if (arrayBuffer) {
-					// ファイル内容をWASM側のメモリへ転送
-
-					var byteArray = new Uint8Array(arrayBuffer);
-
-					var ptr = Module._malloc(arrayBuffer.byteLength);
-					var result = new Uint8Array(Module.HEAPU8.buffer, ptr, arrayBuffer.byteLength);
-
-					for (var i = 0; i < byteArray.byteLength; i++) {
-						result[i] = byteArray[i];
-					}
-
-					resolve(Module.ccall(
-						'getShapefileNRecord',
-						'number',
-						['ArrayBuffer', 'number'],
-						[ptr, byteArray.byteLength]));
+				for (var i = 0; i < byteArray.byteLength; i++) {
+					result[i] = byteArray[i];
 				}
+
+				resolve(Module.ccall(
+					'getShapefileNRecord',
+					'number',
+					['ArrayBuffer', 'number'],
+					[ptr, byteArray.byteLength]));
+
+				Module._free(ptr);
 			}
-		};
-		xhr.send();
+		});
 	});
 }
 

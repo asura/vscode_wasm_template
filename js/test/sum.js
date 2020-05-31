@@ -1,20 +1,14 @@
 function sum(filePath) {
 	return new Promise((resolve, reject) => {
-		var xhr = new XMLHttpRequest();
-
-		xhr.open("GET", filePath, true);
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4) {
-				var data = xhr.responseText; // 外部ファイルの内容
-
-				resolve(Module.ccall(
-					'sumFromText',
-					'string',
-					['string'],
-					[data]));
-			}
-		};
-		xhr.send();
+		fetch(filePath).then(function (response) {
+			return response.text();
+		}).then(function (text) {
+			resolve(Module.ccall(
+				'sumFromText',
+				'string',
+				['string'],
+				[text]));
+		});
 	});
 }
 
