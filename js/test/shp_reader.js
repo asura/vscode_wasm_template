@@ -5,20 +5,14 @@ function readShp(filePath) {
 		}).then(function (arrayBuffer) {
 			if (arrayBuffer) {
 				// ファイル内容をWASM側のメモリへ転送
-
-				var byteArray = new Uint8Array(arrayBuffer);
-
-				var ptr = Module._malloc(arrayBuffer.byteLength);
-				var result = new Uint8Array(Module.HEAPU8.buffer, ptr, arrayBuffer.byteLength);
-
-				for (var i = 0; i < byteArray.byteLength; i++) {
-					result[i] = byteArray[i];
-				}
+				let byteArray = new Uint8Array(arrayBuffer);
+				let ptr = Module._malloc(arrayBuffer.byteLength);
+				Module.HEAPU8.set(byteArray, ptr);
 
 				resolve(Module.ccall(
 					'getShapefileNRecord',
 					'number',
-					['ArrayBuffer', 'number'],
+					['number', 'number'],
 					[ptr, byteArray.byteLength]));
 
 				Module._free(ptr);
