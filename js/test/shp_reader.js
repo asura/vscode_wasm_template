@@ -24,7 +24,7 @@ function readShp(filePath) {
 describe('readShp 関数のテスト', function () {
 	describe('JavaScript側でファイルを読み込んでからwasm関数を呼び出し', function () {
 		it('Shapefileの内容を与えるとレコード数を返す', function (done) {
-			readShp('./ne_110m_land.shp').then(result => {
+			readShp('/data/ne_110m_land.shp').then(result => {
 				expect(result).toBe(127);
 
 				done();
