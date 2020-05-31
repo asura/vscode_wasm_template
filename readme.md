@@ -25,3 +25,4 @@ $ make
 * [【Jasmine】Promiseのテスト方法 - 開発覚書はてな版](https://kakkoyakakko2.hatenablog.com/entry/2018/06/05/003000)
 * [XMLHttpRequest する関数を Promise を返すように修正するチュートリアルをやってみた | deadwood](https://www.d-wood.com/blog/2017/02/13_8809.html)
 * [バイナリデータの送信と受信 - XMLHttpRequest | MDN](https://developer.mozilla.org/ja/docs/XMLHttpRequest/Sending_and_Receiving_Binary_Data)
+* [サーバからのデータ取得 - ウェブ開発を学ぶ | MDN](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
